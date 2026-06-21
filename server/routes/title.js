@@ -17,8 +17,11 @@ router.get("/", async (req, res) => {
 router.put("/", async (req, res) => {
     try {
         const { content } = req.body;
-        // note to my self, {} since there is only one title, { new: true } tells mongoose to return the updated document
-        const title = await Title.findOneAndUpdate({}, { content }, { new: true });
+        // note to my self,
+        //  {} since there is only one title,
+        //  { new: true } tells mongoose to return the updated document, 
+        //  { upsert: true } if nothing matches create it instead of returning null
+        const title = await Title.findOneAndUpdate({}, { content }, { new: true, upsert: true });
         res.status(200).json(title);
     } catch(error) {
         res.status(500).json({message: "Server error"});
