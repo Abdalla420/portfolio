@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 router.put("/", async (req, res) => {
     try {
         const { content } = req.body;
-        // note to my self, {} since there is only one title, { new: true } tells mongoose to return update document
+        // note to my self, {} since there is only one title, { new: true } tells mongoose to return the updated document
         const title = await Title.findOneAndUpdate({}, { content }, { new: true });
         res.status(200).json(title);
     } catch(error) {
