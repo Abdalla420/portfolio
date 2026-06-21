@@ -8,13 +8,15 @@ const app = express();
 
 const port = 5000;
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 app.use(morgan("dev"));
 
 connectDB();
 
 const titleRouter = require("./routes/title");
+const greetingRouter = require("./routes/greeting");
 
 app.use("/api/title", titleRouter);
+app.use("/api/greeting", greetingRouter);
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
