@@ -15,8 +15,10 @@ connectDB();
 
 const titleRouter = require("./routes/title");
 const greetingRouter = require("./routes/greeting");
+const aboutRouter = require("./routes/about");
 
 app.use("/api/title", titleRouter);
 app.use("/api/greeting", greetingRouter);
+app.use("/api/about", aboutRouter);
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
