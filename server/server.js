@@ -1,3 +1,4 @@
+const connectDB = require("./config/db.js");
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
@@ -10,5 +11,6 @@ app.use(cors());
 app.use(express.json())
 app.use(morgan("dev"));
 
+connectDB();
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
