@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const Title = require("../models/Title.js");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const title = await Title.findOne();
         if(!title){
-            res.status(404).json({message: "Title not found"});
+            return res.status(404).json({message: "Title not found"});
         }
         res.status(200).json(title);
     }catch (error) {
