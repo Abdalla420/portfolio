@@ -16,12 +16,13 @@ connectDB();
 const titleRouter = require("./routes/title");
 const greetingRouter = require("./routes/greeting");
 const aboutRouter = require("./routes/about");
-const locationRouter = require("./routes/location")
-
+const locationRouter = require("./routes/location");
+const skillRouter = require("./routes/skill");
 
 app.use("/api/title", titleRouter);
 app.use("/api/greeting", greetingRouter);
 app.use("/api/about", aboutRouter);
 app.use("/api/location", locationRouter);
+app.use("/api/skill", skillRouter);
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
