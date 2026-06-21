@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const locationSchema = new mongoose.Schema({
-    content: {type: String, maxlength: 50}
+    content: {type: String, maxlength: 20}
 }, {timestamps: true});
 
 
