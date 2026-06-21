@@ -13,4 +13,8 @@ app.use(morgan("dev"));
 
 connectDB();
 
+const titleRouter = require("./routes/title");
+
+app.use("./routes/title", titleRouter);
+
 app.listen(port, _ => console.log(`Server started at ${port}`));
