@@ -5,6 +5,16 @@ const Skill = require("../models/Skill");
 const router = express.Router();
 
 
+router.post("/", async (req, res) => {
+    try {
+        const {text, svg} = req.body;
+        const skill = await Skill.create({text, svg});
+        // note to self, 201 for created 
+        res.status(201).json(skill);
+    }catch(error) {
+        res.status(500).json({message: "Server Error"});
+    };
+});
 router.get("/", async (req, res) => {
     try {
         const skill = await Skill.find();
@@ -19,16 +29,6 @@ router.get("/", async (req, res) => {
     };
 });
 
-router.post("/", async (req, res) => {
-    try {
-        const {text, svg} = req.body;
-        const skill = await Skill.create({text, svg});
-        // note to self, 201 for created 
-        res.status(201).json(skill);
-    }catch(error) {
-        res.status(500).json({message: "Server Error"});
-    };
-});
 
 router.put("/:id", async (req, res) => {
     try{
