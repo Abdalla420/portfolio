@@ -19,6 +19,7 @@ const aboutRouter = require("./routes/about");
 const locationRouter = require("./routes/location");
 const skillRouter = require("./routes/skill");
 const projectRouter = require("./routes/project");
+const contactRouter = require("./routes/contact");
 
 app.use("/api/title", titleRouter);
 app.use("/api/greeting", greetingRouter);
@@ -26,6 +27,7 @@ app.use("/api/about", aboutRouter);
 app.use("/api/location", locationRouter);
 app.use("/api/skill", skillRouter);
 app.use("/api/project", projectRouter);
+app.use("/api/contact", contactRouter);
 
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
