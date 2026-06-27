@@ -4,16 +4,19 @@ const Project = require("../models/Project");
 
 const router = express.Router();
 
+const uploads = require("../config/multer")
 
-router.post("/", async (req, res) => {
+
+router.post("/",  uploads.single("image"), async (req, res) => {
     try{
-        const {text, image, link} = req.body;
+        const {text, link} = req.body;
+        const image = req.file.filename;
         const project = await Project.create({text, image, link});
         res.status(201).json(project);
     }catch(error){
         res.status(500).json({message: "Server error"});
     }
-})
+});
 router.get("/", async (req, res) => {
     try{
         const project = await Project.find();
