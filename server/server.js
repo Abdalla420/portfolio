@@ -20,7 +20,7 @@ const locationRouter = require("./routes/location");
 const skillRouter = require("./routes/skill");
 const projectRouter = require("./routes/project");
 const contactRouter = require("./routes/contact");
-const educationRouter = require("./routes/education")
+const educationRouter = require("./routes/education");
 
 app.use("/api/title", titleRouter);
 app.use("/api/greeting", greetingRouter);
@@ -30,6 +30,8 @@ app.use("/api/skill", skillRouter);
 app.use("/api/project", projectRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/education", educationRouter);
+
+app.use("/uploads", express.static("./uploads"));
 
 
 app.listen(port, _ => console.log(`Server started at ${port}`));
