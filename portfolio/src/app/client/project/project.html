@@ -1,1 +1,5 @@
-<p>project works!</p>
+@for (project of projects ?? []; track project._id){
+    <p>{{ project.text }}</p>
+    <p>{{ project.link }}</p>
+    <img [src]="'http://localhost:5000/uploads/' + project.image" [alt]="project.text">
+}

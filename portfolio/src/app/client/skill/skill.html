@@ -1,1 +1,4 @@
-<p>skill works!</p>
+@for (skill of skills ?? []; track skill._id){
+    <p>{{ skill.text }}</p>
+    <p>{{ skill.svg }}</p>
+}
