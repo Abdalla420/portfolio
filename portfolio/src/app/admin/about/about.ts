@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AboutService } from '../../core/services/about-service';
 import { IAbout } from '../../core/models/about-model';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -15,7 +15,7 @@ export class About implements OnInit{
 
 
   aboutForm = new FormGroup({
-    content: new FormControl('')
+    content: new FormControl('', [Validators.required])
   })
 
 

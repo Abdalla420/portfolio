@@ -2,9 +2,33 @@
   <h2>Edit Contact</h2>
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <input formControlName="phone" placeholder="Phone">
+    @if (contactForm.get('phone')?.hasError('required') && contactForm.get('phone')?.touched){
+      <p class="fieldReq">this field is required</p>
+    }
+    @if (contactForm.get('phone')?.hasError('pattern') && contactForm.get('phone')?.touched){
+      <p class="fieldReq">phone must contain only numbers (optional + at the start)</p>
+    }
     <input formControlName="email" placeholder="Email">
+     @if (contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched){
+      <p class="fieldReq">this field is required</p>
+    }
+    @if (contactForm.get('email')?.hasError('email') && contactForm.get('email')?.touched){
+      <p class="fieldReq">please enter a valid egyptian phone number</p>
+    }
     <input formControlName="linkedinUrl" placeholder="LinkedIn URL">
+     @if (contactForm.get('linkedinUrl')?.hasError('required') && contactForm.get('linkedinUrl')?.touched){
+      <p class="fieldReq">this field is required</p>
+    }
+    @if (contactForm.get('linkedinUrl')?.hasError('pattern') && contactForm.get('linkedinUrl')?.touched){
+      <p class="fieldReq">please enter a valid linkedin url</p>
+    }
     <input formControlName="githubUrl" placeholder="GitHub URL">
-    <button type="submit">Save</button>
+     @if (contactForm.get('githubUrl')?.hasError('required') && contactForm.get('githubUrl')?.touched){
+      <p class="fieldReq">this field is required</p>
+    }
+    @if (contactForm.get('githubUrl')?.hasError('pattern') && contactForm.get('githubUrl')?.touched){
+      <p class="fieldReq">please enter a valid github url</p>
+    }
+    <button type="submit" [disabled]="contactForm.invalid">Save</button>
   </form>
 </div>

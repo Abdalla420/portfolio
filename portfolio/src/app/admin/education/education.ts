@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EducationService } from '../../core/services/education-service';
 import { IEducation } from '../../core/models/education-model';
 
@@ -14,9 +14,9 @@ export class Education implements OnInit{
   constructor(private _educationService: EducationService, private _cdr: ChangeDetectorRef) {}
 
   educationForm = new FormGroup({
-    school: new FormControl(''),
-    degree: new FormControl(''),
-    fieldOfStudy: new FormControl('')
+    school: new FormControl('', [Validators.required]),
+    degree: new FormControl('', [Validators.required]),
+    fieldOfStudy: new FormControl('', [Validators.required])
   })
 
 

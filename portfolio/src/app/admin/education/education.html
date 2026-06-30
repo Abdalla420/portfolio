@@ -2,8 +2,17 @@
   <h2>Edit Education</h2>
   <form [formGroup]="educationForm" (ngSubmit)="onSubmit()">
     <input formControlName="school" placeholder="School">
+    @if (educationForm.get('school')?.invalid  && educationForm.get('school')?.touched ){
+      <p class="fieldReq">this field is required</p>
+    }
     <input formControlName="degree" placeholder="Degree">
+    @if (educationForm.get('degree')?.invalid  && educationForm.get('degree')?.touched ){
+      <p class="fieldReq">this field is required</p>
+    }
     <input formControlName="fieldOfStudy" placeholder="Field of Study">
-    <button type="submit">Save</button>
+    @if (educationForm.get('fieldOfStudy')?.invalid  && educationForm.get('fieldOfStudy')?.touched ){
+      <p class="fieldReq">this field is required</p>
+    }
+    <button type="submit" [disabled]="educationForm.invalid">Save</button>
   </form>
 </div>
