@@ -1,0 +1,35 @@
+.contact-wrapper {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.contact-card {
+  background-color: #6a0dad;
+  border-radius: 8px;
+  padding: 24px 32px;
+  display: inline-block;
+}
+
+.contact-card p {
+  color: #ffffff;
+  margin: 8px 0;
+}
+
+.contact-card a {
+  color: #ffffff;
+  text-decoration: underline;
+}

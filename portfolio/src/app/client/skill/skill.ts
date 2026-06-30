@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SkillService } from '../../core/services/skill-service';
 import { ISkill } from '../../core/models/skill-model';
-
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-skill',
   imports: [],
@@ -10,8 +10,12 @@ import { ISkill } from '../../core/models/skill-model';
 })
 export class Skill implements OnInit{
 
-  constructor(private _skillService: SkillService, private _cdr: ChangeDetectorRef){};
+  constructor(private _skillService: SkillService, private _cdr: ChangeDetectorRef, private _sanitizer: DomSanitizer) {};
 
+
+  sanitizeSvg(svg: string): SafeHtml {
+  return this._sanitizer.bypassSecurityTrustHtml(svg);
+  }
 
   skills!: ISkill[];
 

@@ -1,0 +1,25 @@
+.about-wrapper {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-heading {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.about-text {
+  color: #cccccc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}

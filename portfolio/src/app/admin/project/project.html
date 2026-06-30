@@ -1,1 +1,32 @@
-<p>project works!</p>
+<div class="admin-wrapper">
+  <h2>Add Project</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+    <input formControlName="text" placeholder="Project name">
+    <input formControlName="link" placeholder="Project link">
+    <input type="file" (change)="onFileChange($event)">
+    <button type="submit">Add</button>
+    <button type="button" (click)="addForm.reset()">Reset</button>
+  </form>
+
+  <div class="project-list">
+    @for (project of projects; track project._id) {
+      <div class="project-item">
+        <img [src]="'http://localhost:5000/uploads/' + project.image" alt="">
+        <p>{{ project.text }}</p>
+        <p>{{ project.link }}</p>
+        <button (click)="startEdit(project)">Edit</button>
+        <button (click)="onDelete(project._id!)">Delete</button>
+
+        @if (editId === project._id) {
+          <form [formGroup]="editForm" (ngSubmit)="onEdit()">
+            <input formControlName="text" placeholder="Project name">
+            <input formControlName="link" placeholder="Project link">
+            <input type="file" (change)="onEditFileChange($event)">
+            <button type="submit">Save</button>
+            <button type="button" (click)="editId = null">Cancel</button>
+          </form>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,5 +1,5 @@
 export interface IContact {
-    _id: string,
+    _id?: string,
     phone: string,
     email: string,
     linkedinUrl: string,

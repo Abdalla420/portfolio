@@ -1,5 +1,14 @@
-@for (project of projects ?? []; track project._id){
-    <p>{{ project.text }}</p>
-    <p>{{ project.link }}</p>
-    <img [src]="'http://localhost:5000/uploads/' + project.image" [alt]="project.text">
-}
+<section class="project-wrapper">
+  <div class="container">
+    <h2 class="project-heading">Projects</h2>
+    <div class="project-grid">
+      @for (project of projects ?? []; track project._id) {
+        <div class="project-card">
+          <img [src]="'http://localhost:5000/uploads/' + project.image" [alt]="project.text">
+          <p>{{ project.text }}</p>
+          <a [href]="project.link" target="_blank">View Project</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

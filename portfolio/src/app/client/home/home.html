@@ -1,1 +1,12 @@
-<p>home works!</p>
+<section class="home-wrapper">
+  <div class="container">
+    <p class="home-greeting">{{ home?.greeting }}</p>
+    <h1 class="home-name">{{ home?.name }}</h1>
+    <h2 class="home-title">{{ home?.title }}</h2>
+    <p class="home-summary">{{ home?.summary }}</p>
+    <div class="home-buttons">
+      <a routerLink="/project" class="btn-primary-custom">View Projects</a>
+      <a routerLink="/contact" class="btn-secondary-custom">Contact Me</a>
+    </div>
+  </div>
+</section>

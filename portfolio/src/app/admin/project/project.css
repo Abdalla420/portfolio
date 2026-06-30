@@ -1,0 +1,46 @@
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.project-list {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.project-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.project-item img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}

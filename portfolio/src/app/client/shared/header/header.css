@@ -1,0 +1,19 @@
+.header-wrapper {
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #6a0dad;
+}
+
+.nav-custom {
+  color: #cccccc;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-custom:hover {
+  color: #ffffff;
+  background-color: #6a0dad;
+}
+
+.nav-custom.active {
+  background-color: #6a0dad;
+  color: #ffffff;
+}

@@ -1,1 +1,10 @@
-<p>home works!</p>
+<div class="admin-wrapper">
+  <h2>Edit Home Content</h2>
+  <form [formGroup]="homeForm" (ngSubmit)="onSubmit()">
+    <input formControlName="greeting" placeholder="Greeting">
+    <input formControlName="name" placeholder="Name">
+    <input formControlName="title" placeholder="Title">
+    <textarea formControlName="summary" placeholder="Summary" rows="4"></textarea>
+    <button type="submit">Save</button>
+  </form>
+</div>

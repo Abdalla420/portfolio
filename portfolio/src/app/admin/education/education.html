@@ -1,1 +1,9 @@
-<p>education works!</p>
+<div class="admin-wrapper">
+  <h2>Edit Education</h2>
+  <form [formGroup]="educationForm" (ngSubmit)="onSubmit()">
+    <input formControlName="school" placeholder="School">
+    <input formControlName="degree" placeholder="Degree">
+    <input formControlName="fieldOfStudy" placeholder="Field of Study">
+    <button type="submit">Save</button>
+  </form>
+</div>

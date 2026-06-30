@@ -1,1 +1,7 @@
-<p>about works!</p>
+<div class="admin-wrapper">
+  <h2>Edit About</h2>
+  <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+    <textarea formControlName="content" placeholder="About content" rows="6"></textarea>
+    <button type="submit">Save</button>
+  </form>
+</div>

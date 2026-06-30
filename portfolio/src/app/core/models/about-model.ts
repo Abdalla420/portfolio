@@ -1,4 +1,4 @@
 export interface IAbout {
-    _id: string,
+    _id?: string,
     content: string
 }

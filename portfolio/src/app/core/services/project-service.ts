@@ -13,10 +13,10 @@ export class ProjectService {
   getProject() {
     return this._http.get<IProject[]>(this.apiUrl);
   };
-  updateProject(id: string, data: IProject) {
+  updateProject(id: string, data: FormData) {
     return this._http.put<IProject>(`${this.apiUrl}/${id}`, data);
   };  
-  addProject(data: IProject) {
+  addProject(data: FormData) {
     return this._http.post<IProject>(this.apiUrl, data);
   };
   deleteProject(id: string) {

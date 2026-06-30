@@ -1,1 +1,10 @@
-<p>contact works!</p>
+<div class="admin-wrapper">
+  <h2>Edit Contact</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <input formControlName="phone" placeholder="Phone">
+    <input formControlName="email" placeholder="Email">
+    <input formControlName="linkedinUrl" placeholder="LinkedIn URL">
+    <input formControlName="githubUrl" placeholder="GitHub URL">
+    <button type="submit">Save</button>
+  </form>
+</div>

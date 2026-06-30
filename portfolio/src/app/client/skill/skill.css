@@ -1,0 +1,48 @@
+.skill-wrapper {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.skill-heading {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.skill-card {
+  background-color: #6a0dad;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+
+.skill-card p {
+  color: #ffffff;
+  margin: 0;
+}
+.skill-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.skill-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+:host ::ng-deep svg {
+  width: 32px;
+  height: 32px;
+}

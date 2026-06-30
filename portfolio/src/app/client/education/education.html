@@ -1,3 +1,9 @@
-<p>{{ education?.school }}</p>
-<p>{{ education?.fieldOfStudy }}</p>
-<p>{{ education?.degree }}</p>
+<section class="education-wrapper">
+  <div class="container">
+    <h2 class="education-heading">Education</h2>
+    <div class="education-card">
+      <p class="education-school">{{ education?.school }}</p>
+      <p class="education-degree">{{ education?.degree }} — {{ education?.fieldOfStudy }}</p>
+    </div>
+  </div>
+</section>

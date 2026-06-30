@@ -1,1 +1,29 @@
-<p>skill works!</p>
+<div class="admin-wrapper">
+  <h2>Add Skill</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onAdd()">
+    <input formControlName="text" placeholder="Skill name">
+    <input formControlName="svg" placeholder="SVG markup">
+    <button type="submit">Add</button>
+    <button type="button" (click)="addForm.reset()">Reset</button>
+  </form>
+
+  <div class="skill-list">
+    @for (skill of skills; track skill._id) {
+      <div class="skill-item">
+        <p>{{ skill.text }}</p>
+        <div [innerHTML]="sanitizeSvg(skill.svg)"></div>
+        <button (click)="startEdit(skill)">Edit</button>
+        <button (click)="onDelete(skill._id!)">Delete</button>
+
+        @if (editId === skill._id) {
+          <form [formGroup]="editForm" (ngSubmit)="onEdit()">
+            <input formControlName="text" placeholder="Skill name">
+            <input formControlName="svg" placeholder="SVG markup">
+            <button type="submit">Save</button>
+            <button type="button" (click)="editId = null">Cancel</button>
+          </form>
+        }
+      </div>
+    }
+  </div>
+</div>

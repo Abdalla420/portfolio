@@ -1,4 +1,13 @@
-@for (skill of skills ?? []; track skill._id){
-    <p>{{ skill.text }}</p>
-    <p>{{ skill.svg }}</p>
-}
+<section class="skill-wrapper">
+  <div class="container">
+    <h2 class="skill-heading">Skills</h2>
+    <div class="skill-grid">
+      @for (skill of skills ?? []; track skill._id) {
+        <div class="skill-card">
+          <div class="skill-icon" [innerHTML]="sanitizeSvg(skill.svg)"></div>
+          <p>{{ skill.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,4 +1,11 @@
-<p>{{ contact?.phone }}</p>
-<p>{{ contact?.email }}</p>
-<p>{{ contact?.linkedinUrl }}</p>
-<p>{{ contact?.githubUrl }}</p>
+<section class="contact-wrapper">
+  <div class="container">
+    <h2 class="contact-heading">Contact</h2>
+    <div class="contact-card">
+      <p>{{ contact?.phone }}</p>
+      <p>{{ contact?.email }}</p>
+      <p><a [href]="contact?.linkedinUrl" target="_blank">LinkedIn</a></p>
+      <p><a [href]="contact?.githubUrl" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</section>
