@@ -7,10 +7,10 @@ const router = express.Router();
 const uploads = require("../config/multer")
 
 
-router.post("/",  uploads.single("image"), async (req, res) => {
+router.post("/", uploads.single("image"), async (req, res) => {
     try{
         const {text, link} = req.body;
-        const image = req.file.filename;
+        const image = req.file ? req.file.filename : undefined;
         const project = await Project.create({text, image, link});
         res.status(201).json(project);
     }catch(error){
@@ -28,9 +28,10 @@ router.get("/", async (req, res) => {
         res.status(500).json({message: "Server error"});
     }
 });
-router.put("/:id", async (req, res) => {
+router.put("/:id", uploads.single("image"), async (req, res) => {
     try{
-        const {text, image, link} = req.body;
+        const {text, link} = req.body;
+        const image = req.file ? req.file.filename : undefined;
         const project = await Project.findByIdAndUpdate(req.params.id, {text, image, link}, {new: true});
         if(!project){
             res.status(404).json({message: "Project not found"});
