@@ -32,9 +32,9 @@ router.put("/:id", uploads.single("image"), async (req, res) => {
     try{
         const {text, link} = req.body;
         const image = req.file ? req.file.filename : undefined;
-        const project = await Project.findByIdAndUpdate(req.params.id, {text, image, link}, {new: true});
+        const project = await Project.findByIdAndUpdate(req.params.id, {text, link, ...(image && { image })}, {new: true});
         if(!project){
-            res.status(404).json({message: "Project not found"});
+            return res.status(404).json({message: "Project not found"});
         };
         res.status(200).json(project);
     }catch(error){
