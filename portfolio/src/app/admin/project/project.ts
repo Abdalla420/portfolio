@@ -1,7 +1,7 @@
   import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
   import { ProjectService } from '../../core/services/project-service';
   import { IProject } from '../../core/models/project-model';
-  import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+  import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
   @Component({
     selector: 'app-project',
@@ -18,13 +18,13 @@
     selectedFile: File | null = null
 
     addForm = new FormGroup({
-      text: new FormControl(''),
-      link: new FormControl(''),
+      text: new FormControl('', [Validators.required]),
+      link: new FormControl('', [Validators.required]),
       image: new FormControl(null)
     });
     editForm = new FormGroup({
-      text: new FormControl(''),
-      link: new FormControl(''),
+      text: new FormControl('', [Validators.required]),
+      link: new FormControl('', [Validators.required]),
       image: new FormControl('')
     });
 

@@ -26,6 +26,11 @@ button {
   cursor: pointer;
 }
 
+.fieldReq {
+  color: red;
+  margin: 0;
+}
+
 .skill-list {
   margin-top: 32px;
   width: 100%;
@@ -38,7 +43,8 @@ button {
   padding: 12px;
   margin-bottom: 12px;
 }
+
 :host ::ng-deep svg {
-  width: 32px;
-  height: 32px;
+  width: 200px;
+  height: 200px;
 }

@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SkillService } from '../../core/services/skill-service';
-import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Validators, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ISkill } from '../../core/models/skill-model';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -27,13 +27,13 @@ export class Skill implements OnInit{
   editId: string | null= null
 
   addForm = new FormGroup({
-    text: new FormControl(''),
-    svg: new FormControl('')
+    text: new FormControl('', [Validators.required]),
+    svg: new FormControl('', [Validators.required])
   });
 
   editForm = new FormGroup({
-    text: new FormControl(''),
-    svg: new FormControl('')
+    text: new FormControl('', [Validators.required]),
+    svg: new FormControl('', [Validators.required])
   });
 
 
